@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Login</h2>
+<form method="POST" class="login-form">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <label for="{{ form.username.id }}">{{ form.username.label }}</label>
+        {{ form.username() }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.password.id }}">{{ form.password.label }}</label>
+        {{ form.password() }}
+    </div>
+    <div class="form-group">
+        {{ form.submit() }}
+    </div>
+</form>
+
+<style>
+    /* General form styling */
+    .login-form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-group input:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    .form-group input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 15px;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .form-group input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}

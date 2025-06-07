@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edit Bookmark</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        <i class="bi bi-link" style="font-size: 25px;">
+            <label for="url"> Bookmark URL:</label>
+            <input id="url" name="url" type="text" value="{{form.url.data}}"></i>
+    </div>
+    <div>
+        <i class="bi bi-pencil" style="font-size: 25px;"><label for="url"> Description:</label>
+            <input id="description" name="description" type="text" value="{{ form.description.data }}"></i></i>
+    </div>
+    <div>
+        <i class="bi bi-tags" style="font-size: 25px;"> {{ form.category.label }} {{ form.category() }}</i>
+    </div>
+    <div>
+        <input id="submit" name="submit" type="submit" value="Save Bookmark" class="btn btn-dark">
+    </div>
+</form>
+{% endblock %}
